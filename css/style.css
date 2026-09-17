@@ -1,0 +1,217 @@
+/* ==========================================================================
+   KOMAL DESALE PORTFOLIO - TEAL & SAGE DESIGN SYSTEM (style.css)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* --- EXACT COLOR PALETTE & DESIGN TOKENS --- */
+:root {
+  /* Main Background */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F4F7F7;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFA;
+  --bg-input: #F4F7F7;
+  --bg-glass: rgba(255, 255, 255, 0.95);
+
+  /* Primary, Secondary, Tertiary Teal & Gray Palette */
+  --accent-primary: #4B7273;        /* Dark Teal */
+  --accent-primary-hover: #3B5C5D;  /* Deep Teal */
+  --accent-secondary: #86B9B1;      /* Sage Teal */
+  --accent-secondary-hover: #71A79F;
+  --tertiary-gray: #CFD6D6;         /* Light Gray */
+
+  --border-color: #CFD6D6;
+  --border-highlight: #4B7273;
+
+  /* Typography Colors (Dark Neutrals for High Contrast) */
+  --text-primary: #1A2525;
+  --text-secondary: #4A5858;
+  --text-muted: #6C7A7A;
+
+  /* Accent Gradients (Using strictly Dark Teal & Sage Teal) */
+  --accent-gradient: linear-gradient(135deg, #4B7273 0%, #86B9B1 100%);
+  --accent-light-gradient: rgba(134, 185, 177, 0.15);
+  --accent-glow: rgba(75, 114, 115, 0.2);
+
+  /* Consistent Badges (Using Primary & Secondary Palette) */
+  --badge-proficient-bg: rgba(75, 114, 115, 0.12);
+  --badge-proficient-color: #4B7273;
+  --badge-project-bg: rgba(134, 185, 177, 0.18);
+  --badge-project-color: #3B5C5D;
+  --badge-familiar-bg: rgba(207, 214, 214, 0.4);
+  --badge-familiar-color: #4A5858;
+  --badge-learning-bg: rgba(134, 185, 177, 0.15);
+  --badge-learning-color: #4B7273;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 8px rgba(26, 37, 37, 0.04);
+  --shadow-md: 0 8px 24px rgba(75, 114, 115, 0.08);
+  --shadow-lg: 0 16px 40px rgba(26, 37, 37, 0.08);
+  --shadow-glow: 0 6px 20px rgba(75, 114, 115, 0.25);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Dark Theme Variant (Using Consistent Palette) */
+[data-theme="dark"] {
+  --bg-primary: #121A1A;
+  --bg-secondary: #1A2525;
+  --bg-card: #1A2525;
+  --bg-card-hover: #233131;
+  --bg-input: #121A1A;
+  --bg-glass: rgba(26, 37, 37, 0.92);
+
+  --border-color: #334444;
+  --border-highlight: #86B9B1;
+
+  --text-primary: #F4F7F7;
+  --text-secondary: #CFD6D6;
+  --text-muted: #8E9C9C;
+
+  --accent-primary: #86B9B1;
+  --accent-primary-hover: #A0C9C2;
+  --accent-secondary: #4B7273;
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.55);
+}
+
+/* --- RESET & BASE STYLES --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-secondary);
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+}
+
+/* Primary Color Text Utility */
+.gradient-text {
+  color: var(--accent-primary);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-secondary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Selection Highlight */
+::selection {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+}
+
+/* --- KEYFRAME ANIMATIONS & SCROLL REVEAL --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSmooth {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(75, 114, 115, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(75, 114, 115, 0.3);
+  }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

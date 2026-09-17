@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal Developer Portfolio of Komal Desale, a B.Tech Information Technology student at R. C. Patel Institute of Technology, Shirpur (IT '28) preparing for software engineering internships and placement drives." />
+  <meta name="author" content="Komal Desale" />
+  <meta name="keywords" content="Komal Desale, Portfolio, RCPIT Shirpur, IT 28, B.Tech IT, Software Engineer Intern, Developer, C, Java, Python, SQL, Data Structures, Algorithms" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Komal Desale | Developer Portfolio (IT '28)" />
+  <meta property="og:description" content="B.Tech IT Student at R. C. Patel Institute of Technology, Shirpur | Developer | Problem Solver. View projects, academic records, skills, and professional profiles." />
+  <meta property="og:type" content="website" />
+  
+  <title>Komal Desale | Developer Portfolio (IT '28)</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="gradient-text">Komal Desale</span>
+        <span class="nav-logo-badge">IT '28</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#academics" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#profiles" class="nav-link">Profiles</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="btn-icon-only" aria-label="Toggle Theme">
+          <!-- Icon injected by app.js -->
+        </button>
+        <button id="mobile-toggle-btn" class="mobile-toggle" aria-label="Toggle Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+        <div class="reveal-on-scroll">
+          <div class="hero-status-pill">
+            <span class="status-dot"></span>
+            <span id="hero-status">B.Tech IT Student (IT '28) • RCPIT Shirpur</span>
+          </div>
+
+          <h1 class="hero-name" id="hero-name">Komal Desale</h1>
+          <div class="hero-tagline" id="hero-tagline">B.Tech IT Student (IT '28) | Developer & Problem Solver</div>
+          
+          <p class="hero-intro" id="hero-intro">
+            B.Tech Information Technology student at R. C. Patel Institute of Technology, Shirpur passionate about software engineering, web applications, network systems, and algorithmic problem solving. Actively preparing for tech internships and placement opportunities.
+          </p>
+
+          <div class="hero-tech-chips" id="hero-tech-chips">
+            <!-- Primary Languages: C, Java, Python, SQL injected by app.js -->
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              View Projects
+            </a>
+            <button onclick="window.globalModal.openResumePreview(PORTFOLIO_DATA.personalInfo.resumeUrl, PORTFOLIO_DATA.personalInfo.name)" class="btn btn-outline">
+              View Resume
+            </button>
+            <a href="#contact" class="btn btn-outline">
+              Contact Me
+            </a>
+          </div>
+
+          <div class="hero-social-links" id="hero-social-links">
+            <!-- Social Icons injected by app.js -->
+          </div>
+        </div>
+
+        <!-- Sleek Modern Developer Identity Card (Teal & Sage Theme) -->
+        <div class="reveal-on-scroll hero-card-floating">
+          <div class="card" style="border: 1px solid var(--border-color); box-shadow: var(--shadow-lg); position: relative; overflow: hidden; background-color: var(--bg-card);">
+            <div style="position: absolute; top: -40px; right: -40px; width: 140px; height: 140px; background-color: var(--accent-secondary); opacity: 0.15; border-radius: 50%; filter: blur(35px); pointer-events: none;"></div>
+            
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 1px solid var(--border-color);">
+              <div style="width: 54px; height: 54px; border-radius: 50%; background-color: var(--accent-primary); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 800; font-size: 1.45rem; color: #FFFFFF; box-shadow: 0 4px 14px rgba(75, 114, 115, 0.3);">
+                KD
+              </div>
+              <div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.15rem; color: var(--text-primary);">Komal Desale</h3>
+                <div style="font-size: 0.85rem; color: var(--accent-primary); font-weight: 700;">RCPIT, Shirpur • IT '28</div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.875rem;">
+              <!-- Primary Languages Tag Label & Language Chips BELOW -->
+              <div style="padding: 0.35rem 0; border-bottom: 1px dashed var(--border-color);">
+                <span style="color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 0.4rem;">Primary Languages</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.45rem;">
+                  <span class="tech-tag" style="background-color: var(--bg-primary); color: var(--accent-primary); border-color: var(--border-color); font-weight: 700;">C</span>
+                  <span class="tech-tag" style="background-color: var(--bg-primary); color: var(--accent-primary); border-color: var(--border-color); font-weight: 700;">Java</span>
+                  <span class="tech-tag" style="background-color: var(--bg-primary); color: var(--accent-primary); border-color: var(--border-color); font-weight: 700;">Python</span>
+                  <span class="tech-tag" style="background-color: var(--bg-primary); color: var(--accent-primary); border-color: var(--border-color); font-weight: 700;">SQL</span>
+                </div>
+              </div>
+              
+              <div style="padding: 0.35rem 0;">
+                <span style="color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 0.35rem;">Hackathon Activity:</span>
+                <div style="display: flex; flex-direction: column; gap: 0.35rem; padding-left: 0.4rem;">
+                  <div style="font-size: 0.825rem; color: var(--accent-primary); font-weight: 700;">1. InterHack, Jalgaon (Secured 3rd Runner-Up)</div>
+                  <div style="font-size: 0.825rem; color: var(--text-secondary);">2. CodeClash by Technovate at RAIT, Mumbai (Participated)</div>
+                  <div style="font-size: 0.825rem; color: var(--text-secondary);">3. SIH 2026 Team Rocket (Participated)</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.25rem; padding-top: 0.85rem; border-top: 1px solid var(--border-color); text-align: center;">
+              <a href="https://www.linkedin.com/in/komal-desale-96b97b428" target="_blank" class="btn btn-primary btn-sm" style="width: 100%;">
+                Connect on LinkedIn →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT ME -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Identity & Vision</span>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-description">Academic background at RCPIT Shirpur, technical interests, career direction, and building philosophy.</p>
+        </div>
+        <div id="about-content">
+          <!-- Content injected by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. EDUCATION & ACADEMICS -->
+    <section id="academics" class="section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Academic Performance</span>
+          <h2 class="section-title">Education & Academics</h2>
+          <p class="section-description">R. C. Patel Institute of Technology, Shirpur • Semester-wise SGPA (Sem 1 to Sem 5) • 10th (88.20%) and 12th (77.83%) percentages.</p>
+        </div>
+        <div id="academics-content">
+          <!-- Content injected by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. TECHNICAL SKILLS & SOFT SKILLS -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Skills & Strengths</span>
+          <h2 class="section-title">Skills & Capabilities</h2>
+          <p class="section-description">Explore Technical Skills and Soft Skills & Professional Traits.</p>
+        </div>
+
+        <div class="skills-filter-tabs reveal-on-scroll" id="skills-filter-tabs">
+          <!-- Tabs injected by app.js -->
+        </div>
+
+        <div id="skills-content">
+          <!-- Content injected by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FEATURED PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Engineering Portfolio</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-description">Network Device Monitoring & Predictive Fault Analysis System.</p>
+        </div>
+        <div id="projects-content">
+          <!-- Content injected by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. EXPERIENCE & HACKATHONS -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Timeline</span>
+          <h2 class="section-title">Experience & Hackathons</h2>
+          <p class="section-description">InterHack Jalgaon, CodeClash RAIT Mumbai, and Smart India Hackathon 2026 (Team Rocket).</p>
+        </div>
+        <div id="experience-content">
+          <!-- Content injected by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ACHIEVEMENTS -->
+    <section id="achievements" class="section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Milestones</span>
+          <h2 class="section-title">Achievements</h2>
+          <p class="section-description">InterHack, Jalgaon - 3rd Runner-Up.</p>
+        </div>
+        <div id="achievements-content">
+          <!-- Content injected by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CODING & PROFESSIONAL PROFILES -->
+    <section id="profiles" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Online Presence</span>
+          <h2 class="section-title">Coding & Professional Profiles</h2>
+          <p class="section-description">Direct access to LinkedIn, GitHub, LeetCode, and CodeChef activity.</p>
+        </div>
+        <div id="profiles-content">
+          <!-- Content injected by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CURRENTLY LEARNING -->
+    <section id="learning" class="section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Growth Mindset</span>
+          <h2 class="section-title">Currently Learning Pipeline</h2>
+          <p class="section-description">Continuous self-improvement roadmap across core DSA, full-stack, and system design.</p>
+        </div>
+        <div id="learning-content">
+          <!-- Content injected by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. CONTACT -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Get In Touch</span>
+          <h2 class="section-title">Contact Me</h2>
+          <p class="section-description">Available for SDE Internships, Campus Placements, and Technical Opportunities.</p>
+        </div>
+        <div id="contact-content">
+          <!-- Content injected by app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); padding: 3rem 0;">
+    <div class="container" style="text-align: center;">
+      <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;" id="footer-name">Komal Desale</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">
+        B.Tech Information Technology Student (IT '28) • R. C. Patel Institute of Technology, Shirpur
+      </p>
+
+      <div style="display: flex; justify-content: center; gap: 1.25rem; font-size: 0.9rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#academics">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <p style="font-size: 0.825rem; color: var(--text-muted);">
+        © <span id="footer-year">2026</span> Komal Desale. Built with clean HTML5, CSS3, & Vanilla JavaScript.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Reusable Global Modal Container -->
+  <div id="global-modal-overlay" class="modal-overlay" aria-hidden="true">
+    <div id="global-modal-container" class="modal-container" role="dialog" aria-modal="true">
+      <div id="global-modal-header" class="modal-header">
+        <h3 id="modal-title-text" class="modal-title">Project Details</h3>
+        <button id="global-modal-close" class="modal-close-btn" aria-label="Close Modal">&times;</button>
+      </div>
+      <div id="global-modal-body" class="modal-body">
+        <!-- Content dynamically injected by ModalManager -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
