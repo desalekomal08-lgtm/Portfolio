@@ -1,7 +1,7 @@
 /**
  * ACADEMIC SGPA TREND CHART RENDERER (charts.js)
  * Renders an interactive SVG performance trend graph based on completed semesters (1 to 4).
- * Styled with exact Primary Dark Teal (#304A43) and Accent Sage (#8FB3A8) palette.
+ * Styled with exact Warm Ecru (#3B342A & #CDB891) palette.
  */
 
 function renderAcademicChart(semestersData) {
@@ -40,21 +40,21 @@ function renderAcademicChart(semestersData) {
     <svg class="chart-svg" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none">
       <defs>
         <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#8FB3A8" stop-opacity="0.35" />
-          <stop offset="100%" stop-color="#304A43" stop-opacity="0.0" />
+          <stop offset="0%" stop-color="#CDB891" stop-opacity="0.3" />
+          <stop offset="100%" stop-color="#3B342A" stop-opacity="0.0" />
         </linearGradient>
       </defs>
 
       <!-- Horizontal Grid Lines -->
-      <line x1="${paddingLeft}" y1="${paddingTop}" x2="${width - paddingRight}" y2="${paddingTop}" stroke="#D9E2DE" stroke-dasharray="4 4" />
-      <line x1="${paddingLeft}" y1="${paddingTop + chartHeight / 2}" x2="${width - paddingRight}" y2="${paddingTop + chartHeight / 2}" stroke="#D9E2DE" stroke-dasharray="4 4" />
-      <line x1="${paddingLeft}" y1="${height - paddingBottom}" x2="${width - paddingRight}" y2="${height - paddingBottom}" stroke="#D9E2DE" />
+      <line x1="${paddingLeft}" y1="${paddingTop}" x2="${width - paddingRight}" y2="${paddingTop}" stroke="#E3DCCF" stroke-dasharray="4 4" />
+      <line x1="${paddingLeft}" y1="${paddingTop + chartHeight / 2}" x2="${width - paddingRight}" y2="${paddingTop + chartHeight / 2}" stroke="#E3DCCF" stroke-dasharray="4 4" />
+      <line x1="${paddingLeft}" y1="${height - paddingBottom}" x2="${width - paddingRight}" y2="${height - paddingBottom}" stroke="#E3DCCF" />
 
       <!-- Area Fill -->
       <polygon points="${areaPointsString}" fill="url(#chartGradient)" />
 
       <!-- Trend Line -->
-      <polyline points="${pointsString}" fill="none" stroke="#304A43" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      <polyline points="${pointsString}" fill="none" stroke="#3B342A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
 
       <!-- Data Points & Labels -->
   `;
@@ -62,9 +62,9 @@ function renderAcademicChart(semestersData) {
   points.forEach((p) => {
     svgHTML += `
       <g class="chart-point-group">
-        <circle cx="${p.x}" cy="${p.y}" r="6" fill="#FFFFFF" stroke="#304A43" stroke-width="3" />
-        <text x="${p.x}" y="${height - 12}" text-anchor="middle" fill="#66736E" font-size="11" font-weight="600">${p.label.replace('Semester ', 'Sem ')}</text>
-        <text x="${p.x}" y="${p.y - 12}" text-anchor="middle" fill="#304A43" font-size="11" font-weight="700">${p.sgpa}</text>
+        <circle cx="${p.x}" cy="${p.y}" r="6" fill="#FFFFFF" stroke="#3B342A" stroke-width="3" />
+        <text x="${p.x}" y="${height - 12}" text-anchor="middle" fill="#756E63" font-size="11" font-weight="600">${p.label.replace('Semester ', 'Sem ')}</text>
+        <text x="${p.x}" y="${p.y - 12}" text-anchor="middle" fill="#3B342A" font-size="11" font-weight="700">${p.sgpa}</text>
       </g>
     `;
   });

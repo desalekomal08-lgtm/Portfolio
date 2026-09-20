@@ -33,7 +33,7 @@
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: var(--accent-primary);
+  color: var(--accent-secondary);
   margin-bottom: 0.5rem;
   display: inline-block;
   background-color: var(--soft-accent);
@@ -46,7 +46,7 @@
   font-size: 2.35rem;
   letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
-  color: var(--accent-primary);
+  color: var(--accent-dark);
 }
 
 .section-description {
@@ -82,18 +82,18 @@
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 1.35rem;
-  color: var(--accent-primary);
+  color: var(--accent-dark);
 }
 
 .nav-logo-badge {
-  background-color: var(--accent-primary);
+  background-color: var(--accent-dark);
   color: #FFFFFF;
   font-size: 0.75rem;
   padding: 0.25rem 0.7rem;
   border-radius: var(--radius-full);
   font-weight: 700;
   letter-spacing: 0.05em;
-  box-shadow: 0 2px 8px rgba(48, 74, 67, 0.2);
+  box-shadow: 0 2px 8px rgba(59, 52, 42, 0.15);
 }
 
 .nav-links {
@@ -113,7 +113,7 @@
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--accent-primary);
+  color: var(--accent-dark);
 }
 
 .nav-link::after {
@@ -177,7 +177,7 @@
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--accent-primary);
+  color: var(--accent-dark);
   margin-bottom: 1.5rem;
   box-shadow: var(--shadow-sm);
   animation: pulseGlow 4s infinite ease-in-out;
@@ -188,14 +188,14 @@
   height: 9px;
   background-color: var(--accent-secondary);
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--accent-secondary);
+  box-shadow: 0 0 10px rgba(140, 122, 94, 0.3);
 }
 
 .hero-name {
   font-size: 3.35rem;
   letter-spacing: -0.03em;
   margin-bottom: 0.5rem;
-  color: var(--accent-primary);
+  color: var(--accent-dark);
 }
 
 .hero-tagline {

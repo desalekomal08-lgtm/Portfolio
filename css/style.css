@@ -1,59 +1,62 @@
 /* ==========================================================================
-   KOMAL DESALE PORTFOLIO - DEEP TEAL & MUTED SAGE DESIGN SYSTEM (style.css)
+   KOMAL DESALE PORTFOLIO - WARM ECRU DESIGN SYSTEM (style.css)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
 
-/* --- EXACT COLOR PALETTE & DESIGN TOKENS --- */
+/* --- EXACT WARM ECRU COLOR PALETTE & DESIGN TOKENS --- */
 :root {
   /* Main Backgrounds */
-  --bg-primary: #FAFBF8;       /* Main Page Background */
-  --bg-secondary: #E5EEEA;     /* Soft Backgrounds / Highlight Areas */
-  --bg-card: #FFFFFF;          /* Pure White Cards & Clean Contrast */
-  --bg-card-hover: #FAFBF8;
-  --bg-input: #FAFBF8;
-  --bg-glass: rgba(255, 255, 255, 0.95);
+  --bg-primary: #FAF8F2;       /* overall website background */
+  --bg-secondary: #F1EBDD;     /* soft backgrounds / highlight areas */
+  --bg-card: #FFFFFF;          /* cards and clean content areas */
+  --bg-card-hover: #FAF8F2;
+  --bg-input: #FFFFFF;
+  --bg-glass: rgba(250, 248, 242, 0.95);
 
-  /* Primary, Secondary, Accent Teal Palette */
-  --accent-primary: #304A43;        /* Primary Dark Teal */
-  --accent-primary-hover: #26332F;  /* Deepest Dark Teal */
-  --accent-secondary: #5F8177;      /* Secondary Teal */
-  --accent-secondary-hover: #4B6B62;
-  --accent-tertiary: #8FB3A8;       /* Accent Sage */
-  --soft-accent: #E5EEEA;           /* Soft Accent */
+  /* Warm Ecru Color Tokens */
+  --accent-primary: #CDB891;        /* primary buttons, important highlights, selected states */
+  --accent-primary-hover: #BCA379;  /* deepened primary accent */
+  --accent-dark: #3B342A;           /* headings, navbar, primary text emphasis, strong buttons */
+  --accent-dark-hover: #29251F;
+  --accent-secondary: #8C7A5E;      /* secondary text, icons and supporting elements */
+  --accent-secondary-hover: #75654B;
+  --accent-tertiary: #CDB891;
+  --soft-accent: #F1EBDD;           /* soft backgrounds, tags and hover states */
 
-  --border-color: #D9E2DE;          /* Border & Dividers */
-  --border-highlight: #304A43;
+  --border-color: #E3DCCF;          /* borders, dividers and input outlines */
+  --border-highlight: #3B342A;
 
   /* Typography Colors */
-  --text-primary: #26332F;          /* Primary Text */
-  --text-secondary: #66736E;        /* Secondary / Muted Text */
-  --text-muted: #66736E;
+  --text-primary: #29251F;          /* main body text */
+  --text-heading: #3B342A;          /* headings, navbar, primary text emphasis */
+  --text-secondary: #756E63;        /* muted/secondary text */
+  --text-muted: #756E63;
 
-  /* Solid & Soft Accent Tokens (No Blue, No Purple, No Neons, No Rainbow Gradients) */
-  --accent-gradient: #304A43;
-  --accent-light-gradient: #E5EEEA;
-  --accent-glow: rgba(48, 74, 67, 0.15);
+  /* Solid Accent Tokens */
+  --accent-gradient: #3B342A;
+  --accent-light-gradient: #F1EBDD;
+  --accent-glow: rgba(59, 52, 42, 0.12);
 
   /* Badges & Tags */
-  --badge-proficient-bg: #E5EEEA;
-  --badge-proficient-color: #304A43;
-  --badge-project-bg: #E5EEEA;
-  --badge-project-color: #5F8177;
-  --badge-familiar-bg: #FAFBF8;
-  --badge-familiar-color: #66736E;
-  --badge-learning-bg: #E5EEEA;
-  --badge-learning-color: #304A43;
+  --badge-proficient-bg: #F1EBDD;
+  --badge-proficient-color: #3B342A;
+  --badge-project-bg: #F1EBDD;
+  --badge-project-color: #8C7A5E;
+  --badge-familiar-bg: #FAF8F2;
+  --badge-familiar-color: #756E63;
+  --badge-learning-bg: #F1EBDD;
+  --badge-learning-color: #3B342A;
 
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 2px 8px rgba(38, 51, 47, 0.03);
-  --shadow-md: 0 8px 24px rgba(48, 74, 67, 0.06);
-  --shadow-lg: 0 16px 40px rgba(38, 51, 47, 0.06);
-  --shadow-glow: 0 6px 20px rgba(48, 74, 67, 0.18);
+  --shadow-sm: 0 2px 8px rgba(41, 37, 31, 0.03);
+  --shadow-md: 0 8px 24px rgba(59, 52, 42, 0.05);
+  --shadow-lg: 0 16px 40px rgba(41, 37, 31, 0.05);
+  --shadow-glow: 0 6px 20px rgba(59, 52, 42, 0.12);
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', sans-serif;
@@ -64,25 +67,27 @@
   --transition-bounce: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Dark Mode Support Using Same Calming Muted Palette */
+/* Dark Theme Support */
 [data-theme="dark"] {
-  --bg-primary: #1C2623;
-  --bg-secondary: #26332F;
-  --bg-card: #26332F;
-  --bg-card-hover: #304A43;
-  --bg-input: #1C2623;
-  --bg-glass: rgba(38, 51, 47, 0.95);
+  --bg-primary: #1F1B16;
+  --bg-secondary: #29251F;
+  --bg-card: #29251F;
+  --bg-card-hover: #3B342A;
+  --bg-input: #1F1B16;
+  --bg-glass: rgba(41, 37, 31, 0.95);
 
-  --border-color: #3D4E48;
-  --border-highlight: #8FB3A8;
+  --border-color: #4A4237;
+  --border-highlight: #CDB891;
 
-  --text-primary: #FAFBF8;
-  --text-secondary: #D9E2DE;
-  --text-muted: #8FB3A8;
+  --text-primary: #FAF8F2;
+  --text-heading: #FAF8F2;
+  --text-secondary: #E3DCCF;
+  --text-muted: #CDB891;
 
-  --accent-primary: #8FB3A8;
-  --accent-primary-hover: #A5C7BC;
-  --accent-secondary: #5F8177;
+  --accent-primary: #CDB891;
+  --accent-primary-hover: #D8C7A5;
+  --accent-dark: #FAF8F2;
+  --accent-secondary: #8C7A5E;
 
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.35);
@@ -115,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.25;
-  color: var(--text-primary);
+  color: var(--text-heading);
 }
 
 p {
@@ -123,7 +128,7 @@ p {
 }
 
 a {
-  color: var(--accent-primary);
+  color: var(--accent-dark);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
@@ -149,7 +154,7 @@ button {
 
 /* Primary Color Text Utility */
 .gradient-text {
-  color: var(--accent-primary);
+  color: var(--accent-dark);
 }
 
 /* Custom Scrollbar */
@@ -162,18 +167,18 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-tertiary);
+  background: var(--accent-secondary);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-primary);
+  background: var(--accent-dark);
 }
 
 /* Selection Highlight */
 ::selection {
   background: var(--accent-primary);
-  color: #FFFFFF;
+  color: var(--accent-dark);
 }
 
 /* --- KEYFRAME ANIMATIONS & SCROLL REVEAL --- */
@@ -199,10 +204,10 @@ button {
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(48, 74, 67, 0.1);
+    box-shadow: 0 0 15px rgba(59, 52, 42, 0.08);
   }
   50% {
-    box-shadow: 0 0 25px rgba(48, 74, 67, 0.22);
+    box-shadow: 0 0 25px rgba(59, 52, 42, 0.16);
   }
 }
 
