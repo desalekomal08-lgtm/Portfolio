@@ -1,58 +1,59 @@
 /* ==========================================================================
-   KOMAL DESALE PORTFOLIO - TEAL & SAGE DESIGN SYSTEM (style.css)
+   KOMAL DESALE PORTFOLIO - DEEP TEAL & MUTED SAGE DESIGN SYSTEM (style.css)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 /* --- EXACT COLOR PALETTE & DESIGN TOKENS --- */
 :root {
-  /* Main Background */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F4F7F7;
-  --bg-card: #FFFFFF;
-  --bg-card-hover: #F8FAFA;
-  --bg-input: #F4F7F7;
+  /* Main Backgrounds */
+  --bg-primary: #FAFBF8;       /* Main Page Background */
+  --bg-secondary: #E5EEEA;     /* Soft Backgrounds / Highlight Areas */
+  --bg-card: #FFFFFF;          /* Pure White Cards & Clean Contrast */
+  --bg-card-hover: #FAFBF8;
+  --bg-input: #FAFBF8;
   --bg-glass: rgba(255, 255, 255, 0.95);
 
-  /* Primary, Secondary, Tertiary Teal & Gray Palette */
-  --accent-primary: #4B7273;        /* Dark Teal */
-  --accent-primary-hover: #3B5C5D;  /* Deep Teal */
-  --accent-secondary: #86B9B1;      /* Sage Teal */
-  --accent-secondary-hover: #71A79F;
-  --tertiary-gray: #CFD6D6;         /* Light Gray */
+  /* Primary, Secondary, Accent Teal Palette */
+  --accent-primary: #304A43;        /* Primary Dark Teal */
+  --accent-primary-hover: #26332F;  /* Deepest Dark Teal */
+  --accent-secondary: #5F8177;      /* Secondary Teal */
+  --accent-secondary-hover: #4B6B62;
+  --accent-tertiary: #8FB3A8;       /* Accent Sage */
+  --soft-accent: #E5EEEA;           /* Soft Accent */
 
-  --border-color: #CFD6D6;
-  --border-highlight: #4B7273;
+  --border-color: #D9E2DE;          /* Border & Dividers */
+  --border-highlight: #304A43;
 
-  /* Typography Colors (Dark Neutrals for High Contrast) */
-  --text-primary: #1A2525;
-  --text-secondary: #4A5858;
-  --text-muted: #6C7A7A;
+  /* Typography Colors */
+  --text-primary: #26332F;          /* Primary Text */
+  --text-secondary: #66736E;        /* Secondary / Muted Text */
+  --text-muted: #66736E;
 
-  /* Accent Gradients (Using strictly Dark Teal & Sage Teal) */
-  --accent-gradient: linear-gradient(135deg, #4B7273 0%, #86B9B1 100%);
-  --accent-light-gradient: rgba(134, 185, 177, 0.15);
-  --accent-glow: rgba(75, 114, 115, 0.2);
+  /* Solid & Soft Accent Tokens (No Blue, No Purple, No Neons, No Rainbow Gradients) */
+  --accent-gradient: #304A43;
+  --accent-light-gradient: #E5EEEA;
+  --accent-glow: rgba(48, 74, 67, 0.15);
 
-  /* Consistent Badges (Using Primary & Secondary Palette) */
-  --badge-proficient-bg: rgba(75, 114, 115, 0.12);
-  --badge-proficient-color: #4B7273;
-  --badge-project-bg: rgba(134, 185, 177, 0.18);
-  --badge-project-color: #3B5C5D;
-  --badge-familiar-bg: rgba(207, 214, 214, 0.4);
-  --badge-familiar-color: #4A5858;
-  --badge-learning-bg: rgba(134, 185, 177, 0.15);
-  --badge-learning-color: #4B7273;
+  /* Badges & Tags */
+  --badge-proficient-bg: #E5EEEA;
+  --badge-proficient-color: #304A43;
+  --badge-project-bg: #E5EEEA;
+  --badge-project-color: #5F8177;
+  --badge-familiar-bg: #FAFBF8;
+  --badge-familiar-color: #66736E;
+  --badge-learning-bg: #E5EEEA;
+  --badge-learning-color: #304A43;
 
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 2px 8px rgba(26, 37, 37, 0.04);
-  --shadow-md: 0 8px 24px rgba(75, 114, 115, 0.08);
-  --shadow-lg: 0 16px 40px rgba(26, 37, 37, 0.08);
-  --shadow-glow: 0 6px 20px rgba(75, 114, 115, 0.25);
+  --shadow-sm: 0 2px 8px rgba(38, 51, 47, 0.03);
+  --shadow-md: 0 8px 24px rgba(48, 74, 67, 0.06);
+  --shadow-lg: 0 16px 40px rgba(38, 51, 47, 0.06);
+  --shadow-glow: 0 6px 20px rgba(48, 74, 67, 0.18);
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', sans-serif;
@@ -63,29 +64,29 @@
   --transition-bounce: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Dark Theme Variant (Using Consistent Palette) */
+/* Dark Mode Support Using Same Calming Muted Palette */
 [data-theme="dark"] {
-  --bg-primary: #121A1A;
-  --bg-secondary: #1A2525;
-  --bg-card: #1A2525;
-  --bg-card-hover: #233131;
-  --bg-input: #121A1A;
-  --bg-glass: rgba(26, 37, 37, 0.92);
+  --bg-primary: #1C2623;
+  --bg-secondary: #26332F;
+  --bg-card: #26332F;
+  --bg-card-hover: #304A43;
+  --bg-input: #1C2623;
+  --bg-glass: rgba(38, 51, 47, 0.95);
 
-  --border-color: #334444;
-  --border-highlight: #86B9B1;
+  --border-color: #3D4E48;
+  --border-highlight: #8FB3A8;
 
-  --text-primary: #F4F7F7;
-  --text-secondary: #CFD6D6;
-  --text-muted: #8E9C9C;
+  --text-primary: #FAFBF8;
+  --text-secondary: #D9E2DE;
+  --text-muted: #8FB3A8;
 
-  --accent-primary: #86B9B1;
-  --accent-primary-hover: #A0C9C2;
-  --accent-secondary: #4B7273;
+  --accent-primary: #8FB3A8;
+  --accent-primary-hover: #A5C7BC;
+  --accent-secondary: #5F8177;
 
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.55);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.45);
 }
 
 /* --- RESET & BASE STYLES --- */
@@ -161,7 +162,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-secondary);
+  background: var(--accent-tertiary);
   border-radius: var(--radius-full);
 }
 
@@ -198,10 +199,10 @@ button {
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(75, 114, 115, 0.15);
+    box-shadow: 0 0 15px rgba(48, 74, 67, 0.1);
   }
   50% {
-    box-shadow: 0 0 25px rgba(75, 114, 115, 0.3);
+    box-shadow: 0 0 25px rgba(48, 74, 67, 0.22);
   }
 }
 

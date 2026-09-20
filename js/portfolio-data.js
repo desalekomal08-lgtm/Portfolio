@@ -24,22 +24,22 @@ const PORTFOLIO_DATA = {
       linkedin: "https://www.linkedin.com/in/komal-desale-96b97b428",
       codechef: "[YOUR CODECHEF URL]",
       leetcode: "[YOUR LEETCODE URL]",
-      email: "[YOUR EMAIL ADDRESS]"
+      email: "desalekomal08@gmail.com"
     }
   },
 
   about: {
-    academicBackground: "I am currently focused on building a strong foundation in programming, Data Structures and Algorithms, and core Computer Science concepts while gaining practical experience through projects and technical activities.",
-    currentStage: "My immediate goal is to become placement-ready for an entry-level role in the IT industry by improving my problem-solving ability, development skills, and understanding of real-world software projects.",
-    philosophy: "I am particularly interested in exploring software development and related areas as I continue to build projects and gain practical experience. I see my early career as a phase of learning, applying what I know, and gradually identifying the areas where I can build deeper expertise.",
-    careerDirection: "Aiming for entry-level opportunities in Software Development, SDE Internships, or Backend Development, where I can apply my programming and problem-solving skills, work on real-world projects, and continue developing as a software professional.",
+    academicBackground: "3rd-year B.Tech IT student at RCPIT Shirpur, building a strong foundation in Data Structures, Algorithms, and Software Engineering through hands-on project work.",
+    currentStage: "Focused on becoming placement-ready for SDE internships and entry-level software development roles.",
+    philosophy: "",
+    careerDirection: "Software Engineering, SDE Internships, and Backend Development.",
     technicalInterests: [
       "Software Development & Web Applications",
       "Backend Development & RESTful APIs",
       "Data Structures & Problem Solving",
       "AI/ML Applications & Intelligent Systems"
     ],
-    whatIEnjoy: "I enjoy learning how software systems work, building practical projects, and turning concepts from my coursework into working solutions. I am currently focused on strengthening my fundamentals, gaining hands-on experience, and becoming industry-ready."
+    whatIEnjoy: ""
   },
 
   academics: {
@@ -310,7 +310,7 @@ const PORTFOLIO_DATA = {
   },
 
   contact: {
-    email: "[YOUR EMAIL ADDRESS]",
+    email: "desalekomal08@gmail.com",
     linkedin: "https://www.linkedin.com/in/komal-desale-96b97b428",
     github: "[YOUR GITHUB URL]",
     note: "Feel free to reach out for internship opportunities, project collaborations, or technical networking!"

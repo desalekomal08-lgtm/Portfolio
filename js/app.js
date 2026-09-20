@@ -125,9 +125,9 @@ function renderAboutSection() {
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
           Academic Identity & Foundation
         </h3>
-        <p style="margin-bottom: 0.85rem; line-height: 1.65;">${a.academicBackground}</p>
-        <p style="margin-bottom: 0.85rem; line-height: 1.65;">${a.currentStage}</p>
-        <p style="line-height: 1.65; color: var(--text-secondary);">${a.philosophy}</p>
+        ${a.academicBackground ? `<p style="margin-bottom: 0.85rem; line-height: 1.65;">${a.academicBackground}</p>` : ''}
+        ${a.currentStage ? `<p style="line-height: 1.65; color: var(--text-secondary);">${a.currentStage}</p>` : ''}
+        ${a.philosophy ? `<p style="line-height: 1.65; color: var(--text-secondary); margin-top: 0.85rem;">${a.philosophy}</p>` : ''}
       </div>
 
       <div class="card reveal-on-scroll">
@@ -138,7 +138,7 @@ function renderAboutSection() {
         <p style="margin-bottom: 1.1rem; line-height: 1.65;"><strong>Career Target:</strong> ${a.careerDirection}</p>
         
         <h4 style="font-size: 0.95rem; color: var(--text-primary); margin-bottom: 0.75rem; font-weight: 700;">Technical Interests:</h4>
-        <ul class="about-list" style="margin-bottom: 1.1rem;">
+        <ul class="about-list" style="margin-bottom: 0.5rem;">
           ${a.technicalInterests.map(interest => `
             <li class="about-list-item">
               <span class="bullet-icon">▸</span>
@@ -147,7 +147,7 @@ function renderAboutSection() {
           `).join('')}
         </ul>
         
-        <p style="line-height: 1.65; font-size: 0.93rem;">${a.whatIEnjoy}</p>
+        ${a.whatIEnjoy ? `<p style="line-height: 1.65; font-size: 0.93rem; margin-top: 0.85rem;">${a.whatIEnjoy}</p>` : ''}
       </div>
     </div>
   `;
@@ -523,19 +523,95 @@ function renderContactSection() {
 
 function initContactForm() {
   const form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const successMsg = document.getElementById('form-success');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const messageInput = document.getElementById('contact-message');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const successMsg = document.getElementById('form-success');
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const message = messageInput ? messageInput.value.trim() : '';
+
+    if (!name || !email || !message) return;
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Sending Message...';
+    }
+
+    const recipientEmail = (PORTFOLIO_DATA.contact && PORTFOLIO_DATA.contact.email) || 'desalekomal08@gmail.com';
+    const subject = encodeURIComponent(`Portfolio Message from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nSender Email: ${email}\n\nMessage:\n${message}`);
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipientEmail}&su=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${recipientEmail}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message,
+          _subject: `New Portfolio Message from ${name}`
+        })
+      });
+
+      if (response.ok) {
+        if (successMsg) {
+          successMsg.style.display = 'block';
+          successMsg.className = 'form-success-message';
+          successMsg.style.backgroundColor = 'var(--soft-accent)';
+          successMsg.style.color = 'var(--accent-primary)';
+          successMsg.style.border = '1px solid var(--border-color)';
+          successMsg.style.padding = '1rem';
+          successMsg.style.borderRadius = '8px';
+          successMsg.style.marginTop = '1rem';
+          successMsg.innerHTML = `
+            <strong>✅ Message Sent Successfully!</strong><br>
+            Your message has been delivered to <strong>${recipientEmail}</strong>.<br>
+            <div style="margin-top: 0.5rem; font-size: 0.85rem;">
+              Or open directly in Gmail: <a href="${gmailUrl}" target="_blank" style="font-weight: 700; text-decoration: underline; color: var(--accent-primary);">Send via Gmail Web</a>
+            </div>
+          `;
+        }
+        form.reset();
+      } else {
+        throw new Error('API delivery failed');
+      }
+    } catch (err) {
+      window.open(gmailUrl, '_blank') || (window.location.href = mailtoUrl);
       if (successMsg) {
         successMsg.style.display = 'block';
-        form.reset();
-        setTimeout(() => {
-          successMsg.style.display = 'none';
-        }, 5000);
+        successMsg.className = 'form-success-message';
+        successMsg.style.backgroundColor = 'var(--soft-accent)';
+        successMsg.style.color = 'var(--accent-primary)';
+        successMsg.style.border = '1px solid var(--border-color)';
+        successMsg.style.padding = '1rem';
+        successMsg.style.borderRadius = '8px';
+        successMsg.style.marginTop = '1rem';
+        successMsg.innerHTML = `
+          <strong>📧 Opening Email Client...</strong><br>
+          Prepared message for <strong>${recipientEmail}</strong>.<br>
+          <a href="${gmailUrl}" target="_blank" class="btn btn-primary btn-sm" style="display: inline-block; margin-top: 0.5rem; text-decoration: none;">Click Here to Send via Gmail</a>
+        `;
       }
-    });
-  }
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Send Message';
+      }
+    }
+  });
 }
 
 function renderFooter() {
